@@ -8,18 +8,20 @@ $pdo->exec('SET NAMES "utf8"');
     include 'error.html.php';
     exit();
 }
-$gotstuff = 'You don\'t have stuff.';
-$found = 'Your results will appear here.';
-if (isset($_POST['submit'])){
-    $searchterm = $_POST['submit'];
+if (isset($_POST['search'])){
+    $searchterm = $_POST['search'];
     $sql = 'SELECT searchtext FROM list
         WHERE searchtext LIKE "%' . $searchterm . '%"';
-    $found = $pdo->query($sql);
-    foreach($found as $result){
-        $listings[] = $result['searchtext'];
-    }
-    header('Location: .');
+    $result = $pdo->query($sql);
+
+foreach($result as $results){
+    $listings[] = $results['searchtext'];
 }
+
+include 'results.html.php';
+exit();
+}
+
 include 'search.html.php';
 
 
