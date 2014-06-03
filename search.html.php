@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Search Page</title>
     </head>
     <body>
         <form action="" method="post">
