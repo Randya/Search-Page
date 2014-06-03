@@ -9,5 +9,6 @@
             <input type="text" name="search" placeholder="Search Stuff" />
             <input type="submit" value="Search" /><br />
         </form>
+        <?php echo $message; ?>
     </body>
 </html>
